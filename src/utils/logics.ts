@@ -174,7 +174,11 @@ export const gameLogic = (gameCards: GameCards): string => {
   } else if (botNum > userNum) {
     winner = 'Bot'
   } else if (userNum === botNum) {
-    if (suits.indexOf(gameCards.userSuit) > suits.indexOf(gameCards.botSuit)) {
+    if (!userThird && botThird) {
+      winner = 'User'
+    } else if(!botThird && userThird) {
+      winner = 'Bot'
+    } else if (suits.indexOf(gameCards.userSuit) > suits.indexOf(gameCards.botSuit)) {
       winner = 'User'
     } else if (
       suits.indexOf(gameCards.botSuit) > suits.indexOf(gameCards.userSuit)
