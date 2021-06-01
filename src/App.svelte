@@ -151,7 +151,7 @@
     </div>
   {/if}
 </main>
-<footer class="fixed bottom-0 w-full mx-auto text-sm text-gray-600 text-center mt-6 py-2 ">
+<footer class="mt-auto w-full mx-auto text-sm text-gray-600 text-center py-2 ">
   By Min Myat Thu
 </footer>
 
