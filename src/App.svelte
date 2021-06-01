@@ -132,6 +132,7 @@
   <br />
   You can read the game rules at
   <a
+    rel="noopener"
     href="https://github.com/minmyatthu556/shankoemee-svelte"
     target="_blank">this link</a
   >
