@@ -130,11 +130,10 @@
 <footer class="mt-auto w-full mx-auto text-sm text-gray-500 text-center py-2 ">
   By Min Myat Thu
   <br />
-  You can read the game rules at
   <a
     rel="noopener"
     href="https://github.com/minmyatthu556/shankoemee-svelte"
-    target="_blank">this link</a
+    target="_blank">You can read the game rules at this link</a
   >
 </footer>
 
