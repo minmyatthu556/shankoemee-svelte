@@ -1,11 +1,12 @@
 <script lang="ts">
   import Card from './components/Card.svelte'
   import Header from './components/Header.svelte'
-  import { buildADeck, turnKQJto10, printCard } from './utils/helpers'
+  import { buildADeck } from './utils/helpers'
   import { findBiggerSuit, findNumberScore, gameLogic } from './utils/logics'
 
-  const suits = ['♣️', '♦️', '♥️', '♠️']
-  const numbers = ['2', '3', '4', '5', '6', '7', '8', '9', 'J', 'Q', 'K', 'A']
+  let buttonDisable = false
+  let showBot = false
+  let showWinner = false
 
   let deck = buildADeck()
 
@@ -37,9 +38,7 @@
     botNumScore = findNumberScore(botFirstCard, botSecondCard, botDrawCard)
   }
 
-  let buttonDisable = false
-  let showBot = false
-  let showWinner = false
+  let winner = ''
 
   const handleDraw = () => {
     userDrawCard = drawACard()
@@ -85,23 +84,6 @@
 
     showWinner = true
   }
-
-  let winner = ''
-
-  const gameCards = {
-    userNum: Number(userNumScore),
-    userSuit: userSuitScore,
-    botNum: Number(botNumScore),
-    botSuit: botSuitScore,
-    userFirst: userFirstCard,
-    userSecond: userSecondCard,
-    userThird: userDrawCard,
-    botFirst: botFirstCard,
-    botSecond: botSecondCard,
-    botThird: botDrawCard,
-  }
-
-  winner = gameLogic(gameCards)
 </script>
 
 <Header />
@@ -116,17 +98,11 @@
       {/if}
     </div>
     <div class="w-full text-center mx-auto my-10">
-      <button
-        class="py-3 px-5 font-semibold bg-gray-900 text-gray-50 uppercase tracking-wide rounded-full transform transition hover:bg-gray-800 hover:-translate-y-0.5 hover:shadow-none shadow-xl focus:outline-none
-			focus:ring-1 focus:ring-offset-gray-900 mx-5 my-2"
-        on:click={handleDraw}
-        disabled={buttonDisable}>Draw A Card</button
+      <button class="btn" on:click={handleDraw} disabled={buttonDisable}
+        >Draw A Card</button
       >
-      <button
-        class="py-3 px-5 font-semibold bg-gray-900 text-gray-50 uppercase tracking-wide rounded-full transform transition hover:bg-gray-800 hover:-translate-y-0.5 hover:shadow-none shadow-xl focus:outline-none
-			focus:ring-1 focus:ring-offset-gray-900 mx-5 my-2"
-        on:click={handleDontDraw}
-        disabled={buttonDisable}>I won't draw</button
+      <button class="btn" on:click={handleDontDraw} disabled={buttonDisable}
+        >I won't draw</button
       >
     </div>
 
@@ -151,14 +127,27 @@
     </div>
   {/if}
 </main>
-<footer class="mt-auto w-full mx-auto text-sm text-gray-600 text-center py-2 ">
+<footer class="mt-auto w-full mx-auto text-sm text-gray-500 text-center py-2 ">
   By Min Myat Thu
-	<br />
-	You can read the game rules at <a href="https://github.com/minmyatthu556/shankoemee-svelte" target="_blank">this link</a>
+  <br />
+  You can read the game rules at
+  <a
+    href="https://github.com/minmyatthu556/shankoemee-svelte"
+    target="_blank">this link</a
+  >
 </footer>
 
 <style global lang="postcss">
   @tailwind base;
   @tailwind components;
   @tailwind utilities;
+
+  @layer components {
+    .btn {
+      @apply py-3 px-5 font-semibold bg-gray-800 text-gray-50 uppercase 
+			tracking-wide rounded-full transform transition hover:bg-gray-600 hover:-translate-y-0.5 
+			hover:shadow-none shadow-xl focus:outline-none
+			focus:ring-1 focus:ring-offset-gray-900 mx-5 my-2;
+    }
+  }
 </style>
