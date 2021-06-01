@@ -12,7 +12,8 @@
 
 ### How the game works
 You will need to compare your number score to the bot's number score. The person with larger number score wins. 
-If both parties have the same number score, you'll need to compare the suit score. 
+If both parties have the same number score, the one with less card wins.
+If you both have the same number of cards and the number scores are the same, you'll need to compare the suit score. 
 The suit score works like this: Spade > Diamond > Heart > Clubs.
 The person with the larger suit score wins.
 If both have the same suit scores and the same number scores, the person with less card win. 
