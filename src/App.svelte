@@ -146,8 +146,8 @@
     .btn {
       @apply py-3 px-5 font-semibold bg-gray-800 text-gray-50 uppercase 
 			tracking-wide rounded-full transform transition hover:bg-gray-600 hover:-translate-y-0.5 
-			hover:shadow-none shadow-xl focus:outline-none
-			focus:ring-1 focus:ring-offset-gray-900 mx-5 my-2;
+			shadow-xl focus:outline-none
+			focus:ring-gray-800 focus:ring focus:ring-offset-1 mx-5 my-2;
     }
   }
 </style>

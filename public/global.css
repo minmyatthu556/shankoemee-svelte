@@ -13,7 +13,7 @@ body {
 }
 
 a {
-	color: rgb(0,100,200);
+	color: rgba(55, 65, 81, 1);
 	text-decoration: none;
 }
 
@@ -22,7 +22,7 @@ a:hover {
 }
 
 a:visited {
-	color: rgb(0,80,160);
+	color: rgba(17, 24, 39, 1);
 }
 
 label {
@@ -54,10 +54,15 @@ button:disabled {
 	color: #999;
 }
 
+button:disabled:hover {
+	background-color: rgba(31, 41, 55,1);
+	transform: none
+}
+
 button:not(:disabled):active {
 	background-color: #ddd;
 }
-
+/* 
 button:focus {
 	border-color: #666;
-}
+} */
