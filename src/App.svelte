@@ -153,6 +153,8 @@
 </main>
 <footer class="mt-auto w-full mx-auto text-sm text-gray-600 text-center py-2 ">
   By Min Myat Thu
+	<br />
+	You can read the game rules at <a href="https://github.com/minmyatthu556/shankoemee-svelte">this link</a>
 </footer>
 
 <style global lang="postcss">
